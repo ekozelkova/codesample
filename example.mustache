@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <a href="rules_list.php">
+            <div class="edit-link-wrapper">
+                <div class="glyphicon glyphicon-arrow-left my-arrow-glyphicon"></div>
+            </div>
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <button class="btn btn-primary save-delete-button" onclick="saveRule()">
+                Salva
+            </button>
+            <span class="alert alert-success alert-basic" id="success-box" role="alert">
+               Your rule has been saved.
+            </span>
+            <span class="alert alert-danger alert-basic" id="danger-box" role="alert">
+                Fill in all required fields and try sumbitting again.
+            </span>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-6">
+            {{#config_subdevices_rules}}
+                <!-- .name-header is used in styles -->
+                <h2 class="name-header">
+                    <!-- #header-input is used in js and styles -->
+                    <input type="text" value="{{name}}" id="header-input" autofocus="autofocus" placeholder="Rule's name">
+                </h2>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="box">
+                <h4>
+                    Seleziona gli stati device che comporranno la regola
+                </h4>
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {{#config_subdevices_types}}
+                        <div class="panel panel-default">
+
+
+                            <a class="tab-link" role="button" data-toggle="collapse" data-parent="#accordion" aria-expanded="false" aria-controls="collapse-{{id}}" href="#collapse-{{id}}">
+                                <div class="panel-heading" role="tab">
+                                    <h4 class="panel-title">
+                                        {{label}}
+                                        <div class="selected-checkbox-cont">
+                                            <p class="selected-number"></p><span>&nbsp;selected</span>
+                                        </div>
+                                    </h4>
+                                </div>
+                            </a>
+
+                            <div id="collapse-{{id}}" class="panel-collapse collapse" role="tabpanel">
+                                <div class="panel-body">
+                                    <div class="select-all-checkbox">
+                                        <input for="collapse-{{id}}" type="checkbox" id="selectAll-{{id}}" onclick="onCheckAllStatuses(this)">
+                                        <label for="selectAll-{{id}}" class="select-all-text">Select all</label>
+                                    </div>
+
+                                    <!-- .in-collapse-list has its own style instead of .list-basic -->
+                                    <ul id="in-collapse-list">
+                                        {{#statuses}}
+                                            <li>
+                                                <input id="input-{{id}}" type="checkbox" class="selectStatus" value="{{id}}" {{#checked}}checked="checked"{{/checked}} onclick="onSelectStatus(this)">
+                                                <label for="input-{{id}}">
+                                                    {{name}}
+                                                </label>
+                                            </li>
+                                        {{/statuses}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    {{/config_subdevices_types}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="box">
+                <h4>
+                    Scrivi una descrizione per la regola
+                </h4>
+                <div>
+                    <textarea class="form-control" rows="12" id="description">{{description}}</textarea>
+                </div>
+            {{/config_subdevices_rules}}
+            </div>
+        </div>
+    </div>
+
+</div>
