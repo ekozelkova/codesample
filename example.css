@@ -43,32 +43,6 @@
 * End of the calling modal
 */
 
-.patients-list {
-    margin-top: 49px;
-}
-
-.patients-list .patient-row {
-    padding: 8px 0;
-}
-
-.patients-list .patient-row .ticket {
-    margin-left: 29px;
-    margin-right: 100px;
-    padding: 0;
-    font-size: 81px;
-}
-
-/*Destination column*/
-.patients-list .patient-row .destination-cont {
-    padding: 0;
-}
-
-.patients-list .patient-row .destination-cont .room {
-    margin-top: -19px;
-    display: inline-block;
-    font-size: 75px;
-}
-
 /*
 When visit room is not specified
 */
