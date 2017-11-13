@@ -1,0 +1,78 @@
+.date__time {
+  position: absolute;
+  right: 0;
+  width: 100px;
+  text-align: right;
+  margin: 0;
+  font-size: 18px;
+}
+
+.date__day {
+  position: absolute;
+  right: 0;
+  width: 150px;
+  text-align: right;
+  margin: 24px 0 5px 0;
+  font-size: 13px;
+}
+
+.sidebar-menu {
+  margin: 25px 5px 10px;
+  overflow-y: hidden;
+}
+
+.sidebar-menu__user-name, .sidebar-menu__configuration {
+  font-size: 13px;
+  line-height: 27px;
+  min-height: 27px;
+  cursor: default;
+}
+
+.sidebar-menu__configuration:hover, .sidebar-menu__user-name:hover {
+  background-color: white;
+}
+
+.sidebar-menu__configuration {
+  margin-bottom: 30px;
+}
+
+.sidebar-menu__item {
+  text-align: left;
+  margin-top: 5px;
+}
+
+.sidebar-menu__pause {
+  margin-top: 245px;
+}
+
+.sidebar-menu__copyright {
+  font-size: 10px;
+  text-align: left;
+  margin-top: 25px;
+}
+
+.patient-form {
+  padding-top: 60px;
+  width: 77%;
+  margin: 0 auto;
+}
+
+.patient-form__call-container {
+  margin-top: 9px;
+}
+
+.patient-form__ticket {
+  width: 37%;
+  float: left;
+  text-align: left;
+  margin: 0;
+  padding-top: 7px;
+  font-size: 48px;
+}
+
+.call-btn {
+  width: 63%;
+  float: left;
+  margin-top: 16px;
+  text-align: left;
+}

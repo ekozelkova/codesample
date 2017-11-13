@@ -1,5 +1,5 @@
 /**
- * Extracts the "id" parameter from current url and returns it
+ * Returns the "id" parameter from the current url
  */
 function getRuleId() {
     var id = location.search.split('id=')[1];
@@ -22,7 +22,7 @@ function saveRule() {
         JSONstring: JSON.stringify(data)
     };
     
-    $.post('http://url.php', params, function(response) {
+    $.post('http://develop.mryou.artexe.com/services/endpoint_alert.php', params, function(response) {
         //check for empty required fields
         if (response.errid != null) {
             $('#danger-box').fadeIn().css('display', 'inline-block');
